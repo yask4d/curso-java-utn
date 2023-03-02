@@ -1,1 +1,1 @@
-# Estos son los ejercicios de la clase 1
+# Estos son los ejercicios de la clase 1 de Java
