@@ -5,7 +5,6 @@ public class ejercicio_1 {
         evenNumbers(5,17); // 1-b       
         chooseNumbers(10, 21, true); // 1-c
         showEvenNumbers2(10, 21); // 1-d
-
     }
 
     // 1-a // method to show all numbers between a and b
