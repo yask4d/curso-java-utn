@@ -1,6 +1,5 @@
 import java.lang.reflect.Array;
 
-//hello world java program
 public class clase3Ejercicio1 {
     public static void main(String[] args) {
         // dado un string y una letra mostrar la cantidad de veces que aparece la letra en el string
