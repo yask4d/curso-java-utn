@@ -2,8 +2,10 @@ public class clase3Ejercicio2 {
     // main
     public static void main(String[] args) {
         // codificar una cadena con un desplazamiento de 1 caracter hacia la derecha, y teniendo en cuenta que la z se convierte en a
-        System.out.println(codificar1("holax yzz que tal")); 
-        System.out.println(codificar2("hola xyz que tal"));
+        String cadenaOriginal = "Hola xyz que tal";
+        System.out.println("Cadena original: " + cadenaOriginal);
+        System.out.println("Desplazamiento en 1 a la derecha: " + codificar1(cadenaOriginal));
+        System.out.println("Desplazamiento en 2 a la derecha: " + codificar2(cadenaOriginal));        
     } 
     
      public static String codificar1(String texto) {
