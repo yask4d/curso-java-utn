@@ -1,12 +1,22 @@
 public class ejercicio_1 {
     public static void main(String[] args) {
+        System.out.println(countLetter("Hola que tal", 'a')); // 3-1a //  
         int[] ordenado = orderNumbers(41, 22, 11, true);
         for (int i = 0; i < ordenado.length; i++) {
             System.out.print(ordenado[i] + " ");
-        }
-        // Salida esperada: 11 22 41
+        }        
     }
     
+    public static int countLetter(String texto, char letra) {
+        int contador = 0;
+        for (int i = 0; i < texto.length(); i++) {
+            if (texto.charAt(i) == letra) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+
     public static int[] orderNumbers(int a, int b, int c, boolean ascendent) {
         int[] ordenado = new int[3];
         if (ascendent == true) {
