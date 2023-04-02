@@ -1,3 +1,4 @@
+
 public class ejercicio_1 {
     public static void main(String[] args) {
         allNumbers(5,17);  // 1-a
