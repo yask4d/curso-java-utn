@@ -3,7 +3,7 @@ package ar.utn.tp.pronosticos;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class mainTP {
+public class app {
     // metodo main
     public static void main(String[] args) {
         // leer archivo de resultados.csv usando paths.get guardarlo en una lista
