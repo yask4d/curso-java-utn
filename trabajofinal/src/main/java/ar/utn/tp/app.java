@@ -38,8 +38,7 @@ public class app {
                 partido.setGolesEquipo2(Integer.parseInt(campos[2]));
                 partidos.add(partido);
         		
-            //System.out.println(lineaResultado);
-        	}
+            	}
         }
 
         int puntos = 0;
@@ -56,6 +55,10 @@ public class app {
             
         }
         primera = true;
+        int totalLineas = lineasPronosticos.size();
+        
+        System.out.println("Total de lineas: " + totalLineas);
+
         for (String lineaPronostico : lineasPronosticos) {
         	if (primera) {
         		primera = false;        		
@@ -78,28 +81,24 @@ public class app {
                 if ("X".equals(campos[1])) {
                     equipo = equipo1;
                     resultado = "ganador";
-                    System.out.println(lineaPronostico + "ganador");
-                }
+                                    }
                 if ("X".equals(campos[2])) {
                     equipo = equipo1;
                     resultado = "empate";
-                    System.out.println(lineaPronostico + "empate");
-                    
+                                        
                 }
                 if ("X".equals(campos[3])) {
                     equipo = equipo1;
-                    resultado = "perdedor";
-                    System.out.println(lineaPronostico + "perdedor");                    
+                    resultado = "perdedor";                                      
                 }
 
                 Pronostico pronostico = new Pronostico(partido, equipo, resultado);
 
-                puntos += pronostico.Puntos();
-                System.out.println(lineaPronostico);
+                puntos += pronostico.Puntos();                
 
         	}
         }
         // mostrar puntos
-        System.out.println("Puntos: "+ puntos);
+        System.out.println("El jugador acumulo "+ puntos + " puntos");
     }
 }

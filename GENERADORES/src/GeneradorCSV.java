@@ -106,8 +106,6 @@ public class GeneradorCSV {
                         gana2 = "X";
                     }
                     archivoPrediccionesC.append(equipo1 + "," + gana1 + "," + empata + "," + gana2 + "," + equipo2 + "\n");
-
-
                 }
             }
 
