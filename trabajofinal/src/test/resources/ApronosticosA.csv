@@ -1,0 +1,191 @@
+Equipo 1,Gana,Empata,Gana,Equipo 2
+Brasil,,X,,Alemania
+Brasil,,,X,Argentina
+Brasil,,X,,Italia
+Brasil,,,X,Francia
+Brasil,,,X,España
+Brasil,X,,,Países Bajos
+Brasil,,,X,Inglaterra
+Brasil,,X,,Uruguay
+Brasil,,,X,Portugal
+Brasil,X,,,México
+Brasil,,,X,Bélgica
+Brasil,,,X,Colombia
+Brasil,X,,,Chile
+Brasil,,,X,Suecia
+Brasil,X,,,Hungría
+Brasil,X,,,Rusia
+Brasil,,X,,Croacia
+Brasil,,X,,Dinamarca
+Brasil,X,,,Serbia
+Alemania,,,X,Argentina
+Alemania,X,,,Italia
+Alemania,,,X,Francia
+Alemania,,X,,España
+Alemania,,,X,Países Bajos
+Alemania,,,X,Inglaterra
+Alemania,X,,,Uruguay
+Alemania,X,,,Portugal
+Alemania,,X,,México
+Alemania,,,X,Bélgica
+Alemania,,X,,Colombia
+Alemania,,,X,Chile
+Alemania,X,,,Suecia
+Alemania,,,X,Hungría
+Alemania,X,,,Rusia
+Alemania,,,X,Croacia
+Alemania,,,X,Dinamarca
+Alemania,X,,,Serbia
+Argentina,,X,,Italia
+Argentina,X,,,Francia
+Argentina,,X,,España
+Argentina,,,X,Países Bajos
+Argentina,X,,,Inglaterra
+Argentina,X,,,Uruguay
+Argentina,,,X,Portugal
+Argentina,X,,,México
+Argentina,,,X,Bélgica
+Argentina,,,X,Colombia
+Argentina,,X,,Chile
+Argentina,X,,,Suecia
+Argentina,,,X,Hungría
+Argentina,,,X,Rusia
+Argentina,,,X,Croacia
+Argentina,,X,,Dinamarca
+Argentina,X,,,Serbia
+Italia,,,X,Francia
+Italia,,X,,España
+Italia,,X,,Países Bajos
+Italia,X,,,Inglaterra
+Italia,,,X,Uruguay
+Italia,,X,,Portugal
+Italia,X,,,México
+Italia,,,X,Bélgica
+Italia,,,X,Colombia
+Italia,,X,,Chile
+Italia,X,,,Suecia
+Italia,,X,,Hungría
+Italia,X,,,Rusia
+Italia,X,,,Croacia
+Italia,,,X,Dinamarca
+Italia,,X,,Serbia
+Francia,,X,,España
+Francia,X,,,Países Bajos
+Francia,X,,,Inglaterra
+Francia,X,,,Uruguay
+Francia,,X,,Portugal
+Francia,,,X,México
+Francia,,,X,Bélgica
+Francia,,X,,Colombia
+Francia,,,X,Chile
+Francia,,,X,Suecia
+Francia,X,,,Hungría
+Francia,,X,,Rusia
+Francia,,X,,Croacia
+Francia,,X,,Dinamarca
+Francia,,,X,Serbia
+España,X,,,Países Bajos
+España,,,X,Inglaterra
+España,,X,,Uruguay
+España,X,,,Portugal
+España,X,,,México
+España,X,,,Bélgica
+España,,,X,Colombia
+España,X,,,Chile
+España,X,,,Suecia
+España,,X,,Hungría
+España,,X,,Rusia
+España,,,X,Croacia
+España,,,X,Dinamarca
+España,X,,,Serbia
+Países Bajos,,,X,Inglaterra
+Países Bajos,X,,,Uruguay
+Países Bajos,,,X,Portugal
+Países Bajos,,X,,México
+Países Bajos,,,X,Bélgica
+Países Bajos,,,X,Colombia
+Países Bajos,,,X,Chile
+Países Bajos,,X,,Suecia
+Países Bajos,,X,,Hungría
+Países Bajos,,,X,Rusia
+Países Bajos,X,,,Croacia
+Países Bajos,,,X,Dinamarca
+Países Bajos,,X,,Serbia
+Inglaterra,,,X,Uruguay
+Inglaterra,,,X,Portugal
+Inglaterra,,X,,México
+Inglaterra,,,X,Bélgica
+Inglaterra,,,X,Colombia
+Inglaterra,,,X,Chile
+Inglaterra,X,,,Suecia
+Inglaterra,,X,,Hungría
+Inglaterra,,,X,Rusia
+Inglaterra,X,,,Croacia
+Inglaterra,,X,,Dinamarca
+Inglaterra,X,,,Serbia
+Uruguay,X,,,Portugal
+Uruguay,,X,,México
+Uruguay,,X,,Bélgica
+Uruguay,,,X,Colombia
+Uruguay,,,X,Chile
+Uruguay,,X,,Suecia
+Uruguay,,,X,Hungría
+Uruguay,,,X,Rusia
+Uruguay,X,,,Croacia
+Uruguay,,,X,Dinamarca
+Uruguay,X,,,Serbia
+Portugal,,,X,México
+Portugal,X,,,Bélgica
+Portugal,,,X,Colombia
+Portugal,,,X,Chile
+Portugal,X,,,Suecia
+Portugal,,,X,Hungría
+Portugal,,X,,Rusia
+Portugal,X,,,Croacia
+Portugal,X,,,Dinamarca
+Portugal,X,,,Serbia
+México,,,X,Bélgica
+México,X,,,Colombia
+México,X,,,Chile
+México,X,,,Suecia
+México,,,X,Hungría
+México,X,,,Rusia
+México,X,,,Croacia
+México,,X,,Dinamarca
+México,,,X,Serbia
+Bélgica,X,,,Colombia
+Bélgica,X,,,Chile
+Bélgica,,X,,Suecia
+Bélgica,X,,,Hungría
+Bélgica,X,,,Rusia
+Bélgica,X,,,Croacia
+Bélgica,,X,,Dinamarca
+Bélgica,,X,,Serbia
+Colombia,X,,,Chile
+Colombia,X,,,Suecia
+Colombia,,X,,Hungría
+Colombia,,X,,Rusia
+Colombia,X,,,Croacia
+Colombia,,X,,Dinamarca
+Colombia,,X,,Serbia
+Chile,,X,,Suecia
+Chile,X,,,Hungría
+Chile,,,X,Rusia
+Chile,,,X,Croacia
+Chile,,X,,Dinamarca
+Chile,,,X,Serbia
+Suecia,X,,,Hungría
+Suecia,,,X,Rusia
+Suecia,,X,,Croacia
+Suecia,,,X,Dinamarca
+Suecia,,,X,Serbia
+Hungría,,X,,Rusia
+Hungría,,X,,Croacia
+Hungría,X,,,Dinamarca
+Hungría,,,X,Serbia
+Rusia,X,,,Croacia
+Rusia,,,X,Dinamarca
+Rusia,X,,,Serbia
+Croacia,,X,,Dinamarca
+Croacia,,X,,Serbia
+Dinamarca,,,X,Serbia

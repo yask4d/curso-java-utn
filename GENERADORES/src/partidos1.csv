@@ -1,0 +1,191 @@
+Equipo 1,Cantidad de goles 1,Equipo 2,Cantidad de goles 2
+Brasil,1,Alemania,0
+Brasil,1,Argentina,2
+Brasil,3,Italia,0
+Brasil,1,Francia,3
+Brasil,0,España,2
+Brasil,1,Países Bajos,4
+Brasil,0,Inglaterra,1
+Brasil,2,Uruguay,4
+Brasil,3,Portugal,1
+Brasil,2,México,0
+Brasil,0,Bélgica,1
+Brasil,3,Colombia,2
+Brasil,0,Chile,1
+Brasil,0,Suecia,0
+Brasil,2,Hungría,4
+Brasil,4,Rusia,2
+Brasil,0,Croacia,0
+Brasil,0,Dinamarca,4
+Brasil,4,Serbia,0
+Alemania,0,Argentina,1
+Alemania,0,Italia,1
+Alemania,2,Francia,0
+Alemania,1,España,2
+Alemania,3,Países Bajos,0
+Alemania,2,Inglaterra,1
+Alemania,1,Uruguay,1
+Alemania,1,Portugal,0
+Alemania,2,México,3
+Alemania,2,Bélgica,2
+Alemania,4,Colombia,1
+Alemania,2,Chile,3
+Alemania,2,Suecia,3
+Alemania,0,Hungría,4
+Alemania,2,Rusia,0
+Alemania,2,Croacia,2
+Alemania,4,Dinamarca,4
+Alemania,1,Serbia,1
+Argentina,2,Italia,0
+Argentina,3,Francia,1
+Argentina,1,España,4
+Argentina,4,Países Bajos,4
+Argentina,2,Inglaterra,0
+Argentina,1,Uruguay,2
+Argentina,0,Portugal,4
+Argentina,3,México,4
+Argentina,3,Bélgica,4
+Argentina,0,Colombia,1
+Argentina,3,Chile,0
+Argentina,0,Suecia,3
+Argentina,3,Hungría,3
+Argentina,1,Rusia,2
+Argentina,1,Croacia,3
+Argentina,3,Dinamarca,1
+Argentina,2,Serbia,1
+Italia,2,Francia,3
+Italia,3,España,2
+Italia,2,Países Bajos,2
+Italia,0,Inglaterra,3
+Italia,2,Uruguay,4
+Italia,2,Portugal,1
+Italia,0,México,3
+Italia,3,Bélgica,4
+Italia,3,Colombia,0
+Italia,4,Chile,2
+Italia,0,Suecia,4
+Italia,1,Hungría,0
+Italia,0,Rusia,4
+Italia,2,Croacia,0
+Italia,0,Dinamarca,1
+Italia,2,Serbia,2
+Francia,0,España,0
+Francia,2,Países Bajos,2
+Francia,3,Inglaterra,4
+Francia,3,Uruguay,2
+Francia,1,Portugal,3
+Francia,1,México,1
+Francia,4,Bélgica,2
+Francia,4,Colombia,4
+Francia,3,Chile,2
+Francia,1,Suecia,0
+Francia,1,Hungría,4
+Francia,0,Rusia,0
+Francia,0,Croacia,4
+Francia,0,Dinamarca,3
+Francia,3,Serbia,0
+España,0,Países Bajos,0
+España,3,Inglaterra,1
+España,4,Uruguay,1
+España,3,Portugal,4
+España,0,México,1
+España,2,Bélgica,1
+España,3,Colombia,1
+España,4,Chile,2
+España,0,Suecia,4
+España,1,Hungría,1
+España,2,Rusia,0
+España,3,Croacia,0
+España,2,Dinamarca,4
+España,2,Serbia,1
+Países Bajos,4,Inglaterra,1
+Países Bajos,0,Uruguay,4
+Países Bajos,4,Portugal,3
+Países Bajos,3,México,3
+Países Bajos,4,Bélgica,4
+Países Bajos,4,Colombia,2
+Países Bajos,4,Chile,3
+Países Bajos,4,Suecia,3
+Países Bajos,1,Hungría,2
+Países Bajos,3,Rusia,2
+Países Bajos,0,Croacia,1
+Países Bajos,2,Dinamarca,2
+Países Bajos,1,Serbia,0
+Inglaterra,0,Uruguay,4
+Inglaterra,4,Portugal,4
+Inglaterra,1,México,1
+Inglaterra,2,Bélgica,3
+Inglaterra,4,Colombia,4
+Inglaterra,2,Chile,0
+Inglaterra,0,Suecia,4
+Inglaterra,2,Hungría,4
+Inglaterra,0,Rusia,3
+Inglaterra,0,Croacia,0
+Inglaterra,2,Dinamarca,4
+Inglaterra,0,Serbia,2
+Uruguay,1,Portugal,3
+Uruguay,4,México,2
+Uruguay,1,Bélgica,1
+Uruguay,3,Colombia,4
+Uruguay,0,Chile,2
+Uruguay,2,Suecia,0
+Uruguay,3,Hungría,2
+Uruguay,4,Rusia,4
+Uruguay,2,Croacia,2
+Uruguay,3,Dinamarca,1
+Uruguay,1,Serbia,2
+Portugal,0,México,0
+Portugal,1,Bélgica,3
+Portugal,2,Colombia,0
+Portugal,2,Chile,3
+Portugal,4,Suecia,4
+Portugal,2,Hungría,3
+Portugal,4,Rusia,1
+Portugal,1,Croacia,4
+Portugal,2,Dinamarca,4
+Portugal,1,Serbia,0
+México,3,Bélgica,3
+México,0,Colombia,1
+México,2,Chile,0
+México,0,Suecia,2
+México,3,Hungría,3
+México,4,Rusia,2
+México,3,Croacia,1
+México,3,Dinamarca,2
+México,1,Serbia,3
+Bélgica,3,Colombia,4
+Bélgica,0,Chile,1
+Bélgica,2,Suecia,4
+Bélgica,2,Hungría,0
+Bélgica,4,Rusia,2
+Bélgica,4,Croacia,4
+Bélgica,2,Dinamarca,0
+Bélgica,0,Serbia,4
+Colombia,3,Chile,3
+Colombia,1,Suecia,0
+Colombia,0,Hungría,0
+Colombia,2,Rusia,0
+Colombia,0,Croacia,2
+Colombia,0,Dinamarca,2
+Colombia,2,Serbia,4
+Chile,3,Suecia,3
+Chile,3,Hungría,3
+Chile,4,Rusia,4
+Chile,4,Croacia,3
+Chile,4,Dinamarca,3
+Chile,3,Serbia,3
+Suecia,0,Hungría,4
+Suecia,3,Rusia,2
+Suecia,2,Croacia,1
+Suecia,1,Dinamarca,4
+Suecia,3,Serbia,0
+Hungría,0,Rusia,2
+Hungría,0,Croacia,4
+Hungría,3,Dinamarca,4
+Hungría,4,Serbia,1
+Rusia,4,Croacia,0
+Rusia,4,Dinamarca,3
+Rusia,3,Serbia,3
+Croacia,4,Dinamarca,0
+Croacia,0,Serbia,4
+Dinamarca,1,Serbia,4
