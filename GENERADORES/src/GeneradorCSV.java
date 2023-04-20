@@ -12,23 +12,8 @@ public class GeneradorCSV {
             "Brasil",
             "Alemania",
             "Argentina",
-            "Italia",
-            "Francia",
-            "España",
-            "Países Bajos",
-            "Inglaterra",
-            "Uruguay",
-            "Portugal",
-            "México",
-            "Bélgica",
-            "Colombia",
-            "Chile",
-            "Suecia",
-            "Hungría",
-            "Rusia",
-            "Croacia",
-            "Dinamarca",
-            "Serbia"            
+            "Italia"
+          
         };
         int numEquipos = equipos.length;
 
