@@ -17,8 +17,7 @@ public class app {
         
         try {
             lineasResultados = Files.readAllLines(pathResultados);
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
+        } catch (IOException e) {            // 
             System.out.println("Error al leer el archivo");
             System.exit(1);
             
@@ -48,16 +47,15 @@ public class app {
         
         try {
             lineasPronosticos = Files.readAllLines(pathPronosticos);
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
+        } catch (IOException e) {            // 
             System.out.println("Error al leer el archivo");
             System.exit(1);
             
         }
         primera = true;
-        int totalLineas = lineasPronosticos.size();
+        int totalLineas = lineasPronosticos.size() - 1;
         
-        System.out.println("Total de lineas: " + totalLineas);
+        System.out.println("Total de Juegos: " + totalLineas );
 
         for (String lineaPronostico : lineasPronosticos) {
         	if (primera) {
@@ -97,8 +95,7 @@ public class app {
                 puntos += pronostico.Puntos();                
 
         	}
-        }
-        // mostrar puntos
+        }         
         System.out.println("El jugador acumulo "+ puntos + " puntos");
     }
 }
