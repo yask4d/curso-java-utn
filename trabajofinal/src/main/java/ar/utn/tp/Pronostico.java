@@ -1,38 +1,37 @@
 package ar.utn.tp;
 
 public class Pronostico {
-    // atributos partido, equipo y resultado
-    private Partido partido;
-    private Equipo equipo;
+    private String jugador;
+    private int ronda;
+    private String equipo1;
+    private String equipo2;
     private String resultado;
 
-    // constructor
-    public Pronostico(Partido partido, Equipo equipo, String resultado) {
-        this.partido = partido;
-        this.equipo = equipo;
+    public Pronostico(String jugador, int ronda, String equipo1, String resultado, String equipo2) {
+        this.jugador = jugador;
+        this.ronda = ronda;
+        this.equipo1 = equipo1;
+        this.equipo2 = equipo2;
         this.resultado = resultado;
     }
 
-    // getters y setters
-    public Partido getPartido() {
-        return partido;
+    public String getJugador() {
+        return jugador;
     }
-    
-    public Equipo getEquipo() {
-        return equipo;
+
+    public int getRonda() {
+        return ronda;
     }
-    
+
+    public String getEquipo1() {
+        return equipo1;
+    }
+
+    public String getEquipo2() {
+        return equipo2;
+    }
+
     public String getResultado() {
         return resultado;
     }
-    
-    // metodo puntos
-    public int Puntos() {
-        String resultadoReal = partido.resultado(equipo); //este resultado es el que devuelve el metodo resultado de la clase Partido
-        if (resultado.equals(resultadoReal)) {   //este resultado es el pronosticado
-            return 1;
-        } else {
-            return 0;
-        }                
-    }    
 }

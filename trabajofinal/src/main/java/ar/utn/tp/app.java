@@ -1,101 +1,174 @@
 package ar.utn.tp;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-public class app {     
+public class app {
     public static void main(String[] args) {
-        
-        Collection<Partido> partidos = new ArrayList<Partido>();
-    	Path pathResultados = Paths.get("src/test/resources/resultados.csv");
-        List <String> lineasResultados = null;
-        
-        try {
-            lineasResultados = Files.readAllLines(pathResultados);
-        } catch (IOException e) {            // 
-            System.out.println("Error al leer el archivo");
-            System.exit(1);
-            
+        String partidosFile = "src/test/resources/resultados.csv";        
+        ArrayList<Partido> partidos = new ArrayList<>();
+        ArrayList<Pronostico> pronosticos = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(partidosFile))) {
+            String line;
+            br.readLine(); // Skip header
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                partidos.add(new Partido(Integer.parseInt(values[0]), values[1], Integer.parseInt(values[2]), Integer.parseInt(values[3]), values[4]));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        Boolean primera = true;
         
-        for (String lineaResultado : lineasResultados) {
-        	if (primera) {
-        		primera = false;        		
-        	}else {
-        		String[] campos = lineaResultado.split(",");
-        		Equipo equipo1 = new Equipo(campos[0]);
-                Equipo equipo2 = new Equipo(campos[3]);
+        
+        String jdbcUrl = "jdbc:mysql://localhost:3306/pronosticos?useSSL=false";
+        String dbUser = "root";
+        String dbPassword = "Skidrow1968";
 
-        		Partido partido = new Partido(equipo1,equipo2);
-                partido.setGolesEquipo1(Integer.parseInt(campos[1]));
-                partido.setGolesEquipo2(Integer.parseInt(campos[2]));
-                partidos.add(partido);
-        		
-            	}
+        try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUser, dbPassword);
+             Statement statement = connection.createStatement()) {
+
+            String query = "SELECT * FROM pronosticos";
+            ResultSet resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                String jugador = resultSet.getString("jugador");
+                int ronda = resultSet.getInt("ronda");
+                String equipo1 = resultSet.getString("equipo1");
+                String equipo2 = resultSet.getString("equipo2");
+
+                String resultado;
+                if (resultSet.getBoolean("gano")) {
+                    resultado = "Gana";
+                } else if (resultSet.getBoolean("empato")) {
+                    resultado = "Empata";
+                } else {
+                    resultado = "Pierde";
+                }
+
+                pronosticos.add(new Pronostico(jugador, ronda, equipo1, resultado, equipo2));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+  
+        Map<String, Integer> puntajes = calcularPuntajes(partidos, pronosticos);
 
-        int puntos = 0;
+        //Map<String, Integer> puntajes = new HashMap<>();
+        Map<String, Integer> aciertosPorRonda = new HashMap<>();
 
-        Path pathPronosticos = Paths.get("src/test/resources/pronosticos.csv");
-        List <String> lineasPronosticos = null;
-        
-        try {
-            lineasPronosticos = Files.readAllLines(pathPronosticos);
-        } catch (IOException e) {            // 
-            System.out.println("Error al leer el archivo");
-            System.exit(1);
-            
-        }
-        primera = true;
-        int totalLineas = lineasPronosticos.size() - 1;
-        
-        System.out.println("Total de Juegos: " + totalLineas );
+        for (Pronostico pronostico : pronosticos) {
+            for (Partido partido : partidos) {
+                if (pronostico.getRonda() == partido.getRonda() &&
+                        pronostico.getEquipo1().equals(partido.getEquipo1()) &&
+                        pronostico.getEquipo2().equals(partido.getEquipo2())) {
 
-        for (String lineaPronostico : lineasPronosticos) {
-        	if (primera) {
-        		primera = false;        		
-        	}else {
-                String[] campos = lineaPronostico.split(",");
-                Equipo equipo1 = new Equipo(campos[0]);
-                Equipo equipo2 = new Equipo(campos[4]);
-                
-                Partido partido = null;
+                    String pronosticoResultado = pronostico.getResultado();
+                    String partidoResultado;
+                    if (partido.getGolesEquipo1() > partido.getGolesEquipo2()) {
+                        partidoResultado = "Gana";
+                    } else if (partido.getGolesEquipo1() < partido.getGolesEquipo2()) {
+                        partidoResultado = "Pierde";
+                    } else {
+                        partidoResultado = "Empata";
+                    }
 
-                for (Partido partidoAux : partidos) {
-                    if (partidoAux.getEquipo1().getNombre().equals(equipo1.getNombre()) && partidoAux.getEquipo2().getNombre().equals(equipo2.getNombre())) {
-                        partido = partidoAux;
-
+                    if (pronosticoResultado.equals(partidoResultado)) {
+                        String jugador = pronostico.getJugador();
+                        String jugadorRonda = jugador + "-" + pronostico.getRonda();
+                        puntajes.put(jugador, puntajes.getOrDefault(jugador, 0) + 1);
+                        aciertosPorRonda.put(jugadorRonda, aciertosPorRonda.getOrDefault(jugadorRonda, 0) + 1);
                     }
                 }
-                Equipo equipo = null;
-                String resultado = null;
-                
-                if ("X".equals(campos[1])) {
-                    equipo = equipo1;
-                    resultado = "ganador";
-                                    }
-                if ("X".equals(campos[2])) {
-                    equipo = equipo1;
-                    resultado = "empate";
-                                        
+            }
+        }
+
+        for (String jugadorRonda : aciertosPorRonda.keySet()) {
+            if (aciertosPorRonda.get(jugadorRonda) == partidos.size() / 3) {
+                String[] jugadorRondaSplit = jugadorRonda.split("-");
+                String jugador = jugadorRondaSplit[0];
+                puntajes.put(jugador, puntajes.get(jugador) + 2);
+            }
+        }
+
+        int maxPuntaje = 0;
+        String jugadorGanador = "";
+
+        for (Map.Entry<String, Integer> entry : puntajes.entrySet()) {
+            String jugador = entry.getKey();
+            int puntaje = entry.getValue();
+            if (puntaje > maxPuntaje) {
+                maxPuntaje = puntaje;
+                jugadorGanador = jugador;
+            }
+        }
+
+        // Imprimir el puntaje total de cada jugador
+        for (Map.Entry<String, Integer> entry : puntajes.entrySet()) {
+            String jugador = entry.getKey();
+            int puntaje = entry.getValue();
+            System.out.println("Jugador: " + jugador + ", Puntaje total: " + puntaje);
+        }
+        
+        
+        System.out.println("\nEl ganador es: " + jugadorGanador + " con " + maxPuntaje + " puntos.");
+     }
+    
+    public static Map<String, Integer> calcularPuntajes(ArrayList<Partido> partidos, ArrayList<Pronostico> pronosticos) {
+        Map<String, Integer> puntajes = new HashMap<>();
+        Map<String, Integer> aciertosPorRonda = new HashMap<>();
+
+        for (Pronostico pronostico : pronosticos) {
+            for (Partido partido : partidos) {
+                if (pronostico.getRonda() == partido.getRonda() &&
+                        pronostico.getEquipo1().equals(partido.getEquipo1()) &&
+                        pronostico.getEquipo2().equals(partido.getEquipo2())) {
+
+                    String pronosticoResultado = pronostico.getResultado();
+                    String partidoResultado;
+                    if (partido.getGolesEquipo1() > partido.getGolesEquipo2()) {
+                        partidoResultado = "Gana";
+                    } else if (partido.getGolesEquipo1() < partido.getGolesEquipo2()) {
+                        partidoResultado = "Pierde";
+                    } else {
+                        partidoResultado = "Empata";
+                    }
+
+                    if (pronosticoResultado.equals(partidoResultado)) {
+                        String jugador = pronostico.getJugador();
+                        puntajes.put(jugador, puntajes.getOrDefault(jugador, 0) + 1);
+
+                        String jugadorRonda = jugador + "_" + pronostico.getRonda();
+                        aciertosPorRonda.put(jugadorRonda, aciertosPorRonda.getOrDefault(jugadorRonda, 0) + 1);
+                    }
                 }
-                if ("X".equals(campos[3])) {
-                    equipo = equipo1;
-                    resultado = "perdedor";                                      
-                }
+            }
+        }
 
-                Pronostico pronostico = new Pronostico(partido, equipo, resultado);
+        for (String jugadorRonda : aciertosPorRonda.keySet()) {
+            if (aciertosPorRonda.get(jugadorRonda) == partidos.size() / 3) {
+                String[] parts = jugadorRonda.split("_");
+                String jugador = parts[0];
+                puntajes.put(jugador, puntajes.getOrDefault(jugador, 0) + 2);
+            }
+        }
 
-                puntos += pronostico.Puntos();                
-
-        	}
-        }         
-        System.out.println("El jugador acumulo "+ puntos + " puntos");
+        return puntajes;
     }
+
 }
+
+
+
+            	
