@@ -11,7 +11,9 @@ public class GeneradorCSV {
             "Brasil",
             "Alemania",
             "Argentina",
-            "Italia"           
+            "Francia",
+            "Colombia",
+            "Mexico"
         };
         int numEquipos = equipos.length;
 

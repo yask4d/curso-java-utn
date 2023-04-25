@@ -1,7 +1,16 @@
 Equipo 1,Cantidad de goles 1,Cantidad de goles 2,Equipo 2
-Brasil,0,2,Alemania
+Brasil,2,1,Alemania
 Brasil,3,0,Argentina
-Brasil,4,0,Italia
-Alemania,2,1,Argentina
-Alemania,3,2,Italia
-Argentina,1,1,Italia
+Brasil,4,4,Francia
+Brasil,1,1,Colombia
+Brasil,1,4,Mexico
+Alemania,1,1,Argentina
+Alemania,2,4,Francia
+Alemania,1,0,Colombia
+Alemania,1,0,Mexico
+Argentina,1,0,Francia
+Argentina,1,0,Colombia
+Argentina,0,0,Mexico
+Francia,3,4,Colombia
+Francia,2,2,Mexico
+Colombia,2,3,Mexico

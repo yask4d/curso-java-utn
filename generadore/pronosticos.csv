@@ -1,7 +1,16 @@
 Equipo 1,Gana,Empata,Gana,Equipo 2
-Brasil,,X,,Alemania
+Brasil,,,X,Alemania
 Brasil,X,,,Argentina
-Brasil,X,,,Italia
+Brasil,,X,,Francia
+Brasil,,,X,Colombia
+Brasil,X,,,Mexico
 Alemania,,,X,Argentina
-Alemania,,X,,Italia
-Argentina,X,,,Italia
+Alemania,,X,,Francia
+Alemania,,X,,Colombia
+Alemania,,X,,Mexico
+Argentina,,X,,Francia
+Argentina,X,,,Colombia
+Argentina,,,X,Mexico
+Francia,,X,,Colombia
+Francia,,X,,Mexico
+Colombia,,X,,Mexico
