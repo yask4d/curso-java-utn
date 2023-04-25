@@ -1,0 +1,3 @@
+40    jabón      123f
+10    esponja    124f
+100   chocolates 125f
